@@ -8,7 +8,7 @@ val:  val/images # val images
    # val images (relative to 'path') 128 images
 test:  # test images (optional)
 uda: 
-  - 
+  - /kaggle/input/hw3-data/hw3_dataset/fog/train
 
 # Classes
 nc: 8 # number of classes
