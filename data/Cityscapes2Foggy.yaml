@@ -1,12 +1,14 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 
-train:  # train images 
-  - /kaggle/input/hw3-data/hw3_dataset/org/train
-val:  # val images 
-  - /kaggle/input/hw3-data/hw3_dataset/org/val
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ../datasets/org  # dataset root dir
+train:  train/images # train images 
+  - /kaggle/input/hw3-data/hw3_dataset/org/train # train images (relative to 'path') 128 images
+val:  train/images # val images 
+  - /kaggle/input/hw3-data/hw3_dataset/org/val # val images (relative to 'path') 128 images
 test:  # test images (optional)
 uda: 
-  - /kaggle/input/hw3-data/hw3_dataset/fog/train
+  - 
 
 # Classes
 nc: 8 # number of classes
