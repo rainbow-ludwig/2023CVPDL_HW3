@@ -575,6 +575,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
                 if (epoch > 0) and (opt.save_period > 0) and (epoch % opt.save_period == 0):
                     # Use str() to convert epoch to string
                     torch.save(ckpt, w / f'epoch{str(epoch)}.pt')
+                    torch.save(ckpt, w + f'/epoch{epoch}.pt')
                 del ckpt
                 callbacks.run('on_model_save', last, epoch, final_epoch, best_fitness, fi)
 
