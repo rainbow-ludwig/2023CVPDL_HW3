@@ -1,11 +1,14 @@
-ConfMix: Unsupervised Domain Adaptation for Object Detection via Confidence-based Mixing
+# ConfMix: Unsupervised Domain Adaptation for Object Detection via Confidence-based Mixing
 
-Installation:(We recommend the use of a Linux machine equipped with CUDA compatible GPUs.)
-To clone repo and download ckpts&necessary packages:
+## Installation
+(We recommend the use of a Linux machine equipped with CUDA compatible GPUs.)
+To clone the repo and download checkpoints & necessary packages, run the following command:
+```bash
 bash hw3_download.sh
-
-Dataset:
+Dataset
 Please prepare the same dataset offered by TA:
+
+
 Name
 ----
 hw3_dataset
@@ -18,21 +21,28 @@ hw3_dataset/hw3/fog
 hw3_dataset/hw3/fog/train
 hw3_dataset/hw3/fog/val
 hw3_dataset/hw3/fog/val.coco
+Training/Validation
+To train and validate the model, use the following command:
 
-Training/Validation: 
 bash hw3_train.sh $1 $2 $3 $4
-$1: directory of hw3_dataset/hw3/org/train
-$2: directory of hw3_dataset/hw3/org/val
-$3: directory of hw3_dataset/hw3/fog/train
-$4: directory of hw3_dataset/hw3/fog/val
+$1: Directory of hw3_dataset/hw3/org/train
+$2: Directory of hw3_dataset/hw3/org/val
+$3: Directory of hw3_dataset/hw3/fog/train
+$4: Directory of hw3_dataset/hw3/fog/val
+You can find the best/last checkpoints, mAP curve, and mAP.csv of phase 1 (trained on the source dataset) and phase 2 (trained on the target dataset) respectively in the following directories:
 
-(you can find the best/last checkpoints, mAP curve, mAP.csv of phase1(trained on source dataset)
-and phase2(trained on target dataset) respectively in the directory of 
-'2023CVPDL_HW3\runs\train\cityscapes' & '2023CVPDL_HW3\runs\train\cityscapes2foggy')
+Phase 1: 2023CVPDL_HW3/runs/train/cityscapes
+Phase 2: 2023CVPDL_HW3/runs/train/cityscapes2foggy
+Inference
+To perform inference, use the following command:
 
 
-Inference:
 bash hw3_inference.sh $1 $2 $3 $4
-$1: testing images directory that contains testing images
-$2: path of output json file
-$3: 0~4(0: 0%, 1: 33%, 2: 66%, 3:100%, 4: best ckpt)
+$1: Testing images directory that contains testing images
+$2: Path of the output JSON file
+$3: Confidence level (0-4):
+0: 0%
+1: 33%
+2: 66%
+3: 100%
+4: Best checkpoint
