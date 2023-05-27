@@ -1,13 +1,13 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: ../datasets  # dataset root dir
+path: ./datasets  # dataset root dir
 train:  org/train/images # train images 
   # train images (relative to 'path') 128 images
 val:  fog/val/images # val images 
    # val images (relative to 'path') 128 images
 test:  fog/public_test/images# test images (optional)
-uda: ../datasets/fog/train/images
+uda: ./datasets/fog/train/images
   
 # Classes
 nc: 8 # number of classes
