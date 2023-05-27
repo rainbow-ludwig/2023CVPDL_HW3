@@ -7,7 +7,7 @@ train:  org/train/images # train images
 val:  fog/val/images # val images 
    # val images (relative to 'path') 128 images
 test:  fog/public_test/images# test images (optional)
-uda: ../datasets/fog/train/images
+uda: ./datasets/fog/train/images
   
 # Classes
 nc: 8 # number of classes
